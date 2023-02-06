@@ -3,6 +3,9 @@
 Exemple de frontend sur l'API "comptoirs".
 
 ## Eléments rajoutés :
+### Configuration du backend
+Voir [la configuation](./src/App.vue), et une fonction utilitaire pour appeler l'API.
+
 ### [View router](https://router.vuejs.org/)   
 Permet de définir des liens qui affichent des composants vue dans la page.
 Voir [App.vue](./src/App.vue), [Configuration du routeur](./src/router/index.js).
