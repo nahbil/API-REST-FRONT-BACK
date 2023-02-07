@@ -22,7 +22,7 @@
                     <th>Action</th>
                 </tr>
                 <!-- Si le tableau des catégories est vide -->
-                <tr v-if="!data.listeCategories">
+                <tr v-if="data.listeCategories.length === 0">
                     <td colspan="4">Veuillez patienter, chargement des catégories...</td>
                 </tr>
                 <!-- Si le tableau des catégories n'est pas vide -->
@@ -43,7 +43,7 @@
 
 <script setup>
 import { reactive, onMounted } from "vue";
-import { BACKEND, doAjaxRequest } from "../api";
+import { BACKEND, doAjaxRequest, APIError } from "../api";
 
 // Pour réinitialiser le formuaire
 const categorieVide = {
@@ -58,6 +58,12 @@ let data = reactive({
     listeCategories: []
 });
 
+function showError(error) {
+    console.log("Erreur : status %d", error.status)
+    console.log(error.body);
+    alert(error.message);
+}
+
 function chargeCategories() {
     // Appel à l'API pour avoir la liste des catégories
     // Trié par code, descendant
@@ -66,7 +72,7 @@ function chargeCategories() {
         .then((json) => {
             data.listeCategories = json._embedded.categories;
         })
-        .catch((error) => alert(error.message));
+        .catch(showError);
 }
 
 function ajouteCategorie() {
@@ -85,7 +91,7 @@ function ajouteCategorie() {
             // Recharger la liste des catégories
             chargeCategories();
         })
-        .catch((error) => alert(error.message));
+        .catch(showError);
 }
 /**
  * Supprime une entité
@@ -94,7 +100,7 @@ function ajouteCategorie() {
 function deleteEntity(entityRef) {
     doAjaxRequest(entityRef, { method: "DELETE" })
         .then(chargeCategories)
-        .catch((error) => alert(error.message));
+        .catch(showError);
 }
 
 // A l'affichage du composant, on affiche la liste
