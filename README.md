@@ -4,7 +4,9 @@ Exemple de frontend sur l'API "comptoirs".
 
 ## Eléments rajoutés :
 ### Configuration du backend
-Voir [la configuation](./src/api.js), et une fonction utilitaire pour appeler l'API.
+
+[Configuration d'un "proxy"](./vite.config.js) pour le backend,
+[une fonction utilitaire pour appeler l'API](./src/api.js),
 
 ### [View router](https://router.vuejs.org/)   
 Permet de définir des liens qui affichent des composants vue dans la page.

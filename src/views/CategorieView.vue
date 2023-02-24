@@ -43,7 +43,7 @@
 
 <script setup>
 import { reactive, onMounted } from "vue";
-import { BACKEND, doAjaxRequest, APIError } from "../api";
+import { doAjaxRequest, APIError } from "../api";
 
 // Pour réinitialiser le formuaire
 const categorieVide = {
@@ -68,7 +68,7 @@ function chargeCategories() {
     // Appel à l'API pour avoir la liste des catégories
     // Trié par code, descendant
     // Verbe HTTP GET par défaut
-    doAjaxRequest(BACKEND + "/api/categories?sort=code,desc")
+    doAjaxRequest("/api/categories?sort=code,desc")
         .then((json) => {
             data.listeCategories = json._embedded.categories;
         })
@@ -84,7 +84,7 @@ function ajouteCategorie() {
             "Content-Type": "application/json",
         },
     };
-    doAjaxRequest(BACKEND + "/api/categories", options)
+    doAjaxRequest("/api/categories", options)
         .then(() => {
             // Réinitialiser le formulaire
             data.formulaireCategorie = { ...categorieVide };
