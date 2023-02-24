@@ -1,9 +1,4 @@
 
-// L'adresse du backend local
-const BACKEND = 'http://localhost:8989';
-// Le backend est également déployé sur heroku
-// Attention : le chargement initial peut être un peu long...
-// const BACKEND = 'https://springajax.herokuapp.com';
 
 class APIError extends Error {
   constructor(status, body) {
@@ -35,4 +30,4 @@ async function doAjaxRequest(url, options) {
   return result;
 }
 
-export {BACKEND, doAjaxRequest, APIError};
+export {doAjaxRequest, APIError};
