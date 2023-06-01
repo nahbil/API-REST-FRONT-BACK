@@ -45,7 +45,7 @@
 import { reactive, onMounted } from "vue";
 import { doAjaxRequest, APIError } from "../api";
 
-// Pour réinitialiser le formuaire
+// Pour réinitialiser le formulaire
 const categorieVide = {
     libelle: "",
     description: ""
