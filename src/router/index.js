@@ -7,9 +7,9 @@ const router = createRouter({
     // Associe des chemins d'accès au composant vue à afficher
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: '/', // Chemin d'accès
+      name: 'home', // Nom du chemin d'accès
+      component: HomeView // Composant à afficher
     },
     {
       path: '/categories',

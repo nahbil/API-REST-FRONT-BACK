@@ -9,13 +9,12 @@ import HelloWorld from './components/HelloWorld.vue'
 
         <div class="wrapper">
             <HelloWorld msg="You did it!"/>
-
             <nav>
                 <!-- RouterLink : des liens qui pointent vers le composant à afficher -->
                 <!-- Voir la configuration des liens dans router/index.js -->
                 <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/about">About</RouterLink>
-                <RouterLink to="/categories">Categories</RouterLink>
+                <RouterLink to="/categories">Catégories</RouterLink>
             </nav>
         </div>
     </header>
