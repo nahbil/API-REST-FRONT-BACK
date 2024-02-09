@@ -6,7 +6,7 @@ Ce projet est un exemple de frontend vue.js sur le backend "comptoirs" [déploy�
 
 ### Accès au backend
 
-On [configure un "proxy"](./vite.config.js) pour l'accès au backend, pour éviter les problèmes liés à [SOP](https://portswigger.net/web-security/cors/same-origin-policy).
+On [configure un "proxy"](./vite.config.js) pour l'accès au backend, on peut appeler l'api à l'url ```/api/```, la redirection sera faite automatiquement.
 
 ### Appel de l'API REST
 
@@ -19,7 +19,6 @@ On utilise le [View router](./router.md) pour gérer la navigation entre les com
 ### Un exemple de composant Vue qui fait un appel à l'API REST
 
 [Le composant qui affiche les catégories](./src/views/CategorieView.vue)
-
 
 ## Installation des dépendances pour le frontend
 
